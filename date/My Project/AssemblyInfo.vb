@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' 查看程序集特性的值
 
-<Assembly: AssemblyTitle("Paste")> 
-<Assembly: AssemblyDescription("the dll for paste tools.")> 
+<Assembly: AssemblyTitle("date")> 
+<Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Paste .NET")> 
-<Assembly: AssemblyCopyright("Copyright © T-Sugar 2014")> 
+<Assembly: AssemblyProduct("date")> 
+<Assembly: AssemblyCopyright("")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 '如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-<Assembly: Guid("30a076f1-e816-4f30-a508-75ab7edc60e6")> 
+<Assembly: Guid("5864585f-d886-48b0-bb0b-27563bd7d3fe")> 
 
 ' 程序集的版本信息由下面四个值组成: 
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 方法是按如下所示使用“*”: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.15.2.0")> 
-<Assembly: AssemblyFileVersion("3.14.9.18")> 
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> 

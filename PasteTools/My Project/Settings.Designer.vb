@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Ctrl + Enter 快捷键")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("未设置快捷键")>  _
         Public Property CheckBox1Text() As String
             Get
                 Return CType(Me("CheckBox1Text"),String)
@@ -90,18 +90,18 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("数据目录")>  _
-        Public ReadOnly Property BtF1Text() As String
+        Public ReadOnly Property BtDataText() As String
             Get
-                Return CType(Me("BtF1Text"),String)
+                Return CType(Me("BtDataText"),String)
             End Get
         End Property
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("配置目录")>  _
-        Public ReadOnly Property BtF2Text() As String
+        Public ReadOnly Property BtConfigText() As String
             Get
-                Return CType(Me("BtF2Text"),String)
+                Return CType(Me("BtConfigText"),String)
             End Get
         End Property
         
@@ -143,16 +143,16 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("关于作者...")>  _
-        Public ReadOnly Property LinkLabel1Text() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("关于...")>  _
+        Public ReadOnly Property LinkLabelAboutText() As String
             Get
-                Return CType(Me("LinkLabel1Text"),String)
+                Return CType(Me("LinkLabelAboutText"),String)
             End Get
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("default")>  _
         Public Property ComboBox1Text() As String
             Get
                 Return CType(Me("ComboBox1Text"),String)
@@ -164,25 +164,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("20")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("120")>  _
         Public Property MaskedTextBox1Text() As String
             Get
                 Return CType(Me("MaskedTextBox1Text"),String)
             End Get
             Set
                 Me("MaskedTextBox1Text") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property CheckBox1Checked() As Boolean
-            Get
-                Return CType(Me("CheckBox1Checked"),Boolean)
-            End Get
-            Set
-                Me("CheckBox1Checked") = value
             End Set
         End Property
         
@@ -240,6 +228,48 @@ Namespace My
             End Get
             Set
                 Me("TabPage3BackColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("设置面板-颜色设置")>  _
+        Public ReadOnly Property LabelTb3ColorText() As String
+            Get
+                Return CType(Me("LabelTb3ColorText"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("主界面-颜色设置")>  _
+        Public ReadOnly Property LabelMainPTColorText() As String
+            Get
+                Return CType(Me("LabelMainPTColorText"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property FormWidth() As Integer
+            Get
+                Return CType(Me("FormWidth"),Integer)
+            End Get
+            Set
+                Me("FormWidth") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property FormHeight() As Integer
+            Get
+                Return CType(Me("FormHeight"),Integer)
+            End Get
+            Set
+                Me("FormHeight") = value
             End Set
         End Property
     End Class
