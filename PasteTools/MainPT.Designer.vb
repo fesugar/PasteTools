@@ -47,12 +47,13 @@ Partial Class MainPT
         Me.LabelTxdata = New System.Windows.Forms.Label()
         Me.TextBoxBtName = New System.Windows.Forms.TextBox()
         Me.TextBoxHovertip = New System.Windows.Forms.TextBox()
-        Me.TextBoxTxData = New System.Windows.Forms.TextBox()
+        Me.richBoxTxData = New System.Windows.Forms.RichTextBox()
         Me.ButtonAdd = New System.Windows.Forms.Button()
         Me.ButtonDelete = New System.Windows.Forms.Button()
         Me.LabelStatu = New System.Windows.Forms.Label()
         Me.Btc = New System.Windows.Forms.Button()
         Me.Btm = New System.Windows.Forms.Button()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -65,35 +66,34 @@ Partial Class MainPT
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 38)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 48)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(174, 482)
+        Me.TabControl1.Size = New System.Drawing.Size(232, 600)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.AliceBlue
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(166, 456)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage1.Size = New System.Drawing.Size(224, 571)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.AliceBlue
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(166, 456)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage2.Size = New System.Drawing.Size(224, 571)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
-        '
-        'Buttons
-        '
-        TabPg() '动态加载按钮
         '
         'TabPage3
         '
@@ -104,10 +104,11 @@ Partial Class MainPT
         Me.TabPage3.Controls.Add(Me.GroupBox2)
         Me.TabPage3.Controls.Add(Me.GroupBox1)
         Me.TabPage3.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.PasteTools.My.MySettings.Default, "TabPage3BackColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(166, 456)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage3.Size = New System.Drawing.Size(224, 571)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         '
@@ -121,9 +122,11 @@ Partial Class MainPT
         Me.GroupBox3.Controls.Add(Me.MaskedTextBox1)
         Me.GroupBox3.Controls.Add(Me.CheckBox1)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 147)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 184)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(142, 238)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox3.Size = New System.Drawing.Size(189, 298)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = Global.PasteTools.My.MySettings.Default.GroupBox3Text
@@ -131,9 +134,10 @@ Partial Class MainPT
         'LabelTb3Color
         '
         Me.LabelTb3Color.AutoSize = True
-        Me.LabelTb3Color.Location = New System.Drawing.Point(6, 164)
+        Me.LabelTb3Color.Location = New System.Drawing.Point(8, 205)
+        Me.LabelTb3Color.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelTb3Color.Name = "LabelTb3Color"
-        Me.LabelTb3Color.Size = New System.Drawing.Size(107, 12)
+        Me.LabelTb3Color.Size = New System.Drawing.Size(135, 15)
         Me.LabelTb3Color.TabIndex = 6
         Me.LabelTb3Color.Text = Global.PasteTools.My.MySettings.Default.LabelTb3ColorText
         '
@@ -141,9 +145,10 @@ Partial Class MainPT
         '
         Me.LabelMainPTColor.AutoSize = True
         Me.LabelMainPTColor.BackColor = System.Drawing.Color.Transparent
-        Me.LabelMainPTColor.Location = New System.Drawing.Point(6, 143)
+        Me.LabelMainPTColor.Location = New System.Drawing.Point(8, 179)
+        Me.LabelMainPTColor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelMainPTColor.Name = "LabelMainPTColor"
-        Me.LabelMainPTColor.Size = New System.Drawing.Size(95, 12)
+        Me.LabelMainPTColor.Size = New System.Drawing.Size(120, 15)
         Me.LabelMainPTColor.TabIndex = 5
         Me.LabelMainPTColor.Text = Global.PasteTools.My.MySettings.Default.LabelMainPTColorText
         '
@@ -154,9 +159,10 @@ Partial Class MainPT
         Me.CheckBox3.Checked = Global.PasteTools.My.MySettings.Default.CheckBox3Checked
         Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox3.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.PasteTools.My.MySettings.Default, "CheckBox3Checked", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.CheckBox3.Location = New System.Drawing.Point(6, 114)
+        Me.CheckBox3.Location = New System.Drawing.Point(8, 142)
+        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(108, 16)
+        Me.CheckBox3.Size = New System.Drawing.Size(134, 19)
         Me.CheckBox3.TabIndex = 2
         Me.CheckBox3.Text = Global.PasteTools.My.MySettings.Default.CheckBox3Text
         Me.CheckBox3.UseVisualStyleBackColor = False
@@ -168,9 +174,10 @@ Partial Class MainPT
         Me.CheckBox2.Checked = Global.PasteTools.My.MySettings.Default.CheckBox2Checked
         Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox2.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.PasteTools.My.MySettings.Default, "CheckBox2Checked", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.CheckBox2.Location = New System.Drawing.Point(6, 92)
+        Me.CheckBox2.Location = New System.Drawing.Point(8, 115)
+        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(72, 16)
+        Me.CheckBox2.Size = New System.Drawing.Size(89, 19)
         Me.CheckBox2.TabIndex = 1
         Me.CheckBox2.Text = Global.PasteTools.My.MySettings.Default.CheckBox2Text
         Me.CheckBox2.UseVisualStyleBackColor = False
@@ -179,10 +186,11 @@ Partial Class MainPT
         '
         Me.MaskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MaskedTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.PasteTools.My.MySettings.Default, "MaskedTextBox1Text", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(111, 29)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(148, 36)
+        Me.MaskedTextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.MaskedTextBox1.Mask = "100"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(25, 14)
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(33, 18)
         Me.MaskedTextBox1.TabIndex = 4
         Me.MaskedTextBox1.Text = Global.PasteTools.My.MySettings.Default.MaskedTextBox1Text
         '
@@ -191,9 +199,10 @@ Partial Class MainPT
         Me.CheckBox1.Appearance = System.Windows.Forms.Appearance.Button
         Me.CheckBox1.BackColor = System.Drawing.Color.Transparent
         Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox1.Location = New System.Drawing.Point(6, 58)
+        Me.CheckBox1.Location = New System.Drawing.Point(8, 72)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(130, 25)
+        Me.CheckBox1.Size = New System.Drawing.Size(173, 31)
         Me.CheckBox1.TabIndex = 0
         Me.CheckBox1.Text = Global.PasteTools.My.MySettings.Default.CheckBox1Text
         Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -204,9 +213,10 @@ Partial Class MainPT
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(6, 29)
+        Me.Label1.Location = New System.Drawing.Point(8, 36)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 12)
+        Me.Label1.Size = New System.Drawing.Size(129, 15)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = Global.PasteTools.My.MySettings.Default.Label1Text
         '
@@ -214,9 +224,10 @@ Partial Class MainPT
         '
         Me.LinkLabelAbout.AutoSize = True
         Me.LinkLabelAbout.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabelAbout.Location = New System.Drawing.Point(107, 439)
+        Me.LinkLabelAbout.Location = New System.Drawing.Point(143, 549)
+        Me.LinkLabelAbout.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabelAbout.Name = "LinkLabelAbout"
-        Me.LinkLabelAbout.Size = New System.Drawing.Size(47, 12)
+        Me.LinkLabelAbout.Size = New System.Drawing.Size(61, 15)
         Me.LinkLabelAbout.TabIndex = 6
         Me.LinkLabelAbout.TabStop = True
         Me.LinkLabelAbout.Text = Global.PasteTools.My.MySettings.Default.LinkLabelAboutText
@@ -225,9 +236,10 @@ Partial Class MainPT
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(10, 439)
+        Me.Label2.Location = New System.Drawing.Point(13, 549)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 12)
+        Me.Label2.Size = New System.Drawing.Size(55, 15)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Label2"
         '
@@ -236,9 +248,11 @@ Partial Class MainPT
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.BtConfig)
         Me.GroupBox2.Controls.Add(Me.BtData)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 74)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 92)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(142, 58)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox2.Size = New System.Drawing.Size(189, 72)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = Global.PasteTools.My.MySettings.Default.GroupBox2Text
@@ -249,9 +263,10 @@ Partial Class MainPT
         Me.BtConfig.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtConfig.FlatAppearance.BorderSize = 0
         Me.BtConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtConfig.Location = New System.Drawing.Point(74, 20)
+        Me.BtConfig.Location = New System.Drawing.Point(99, 25)
+        Me.BtConfig.Margin = New System.Windows.Forms.Padding(4)
         Me.BtConfig.Name = "BtConfig"
-        Me.BtConfig.Size = New System.Drawing.Size(62, 26)
+        Me.BtConfig.Size = New System.Drawing.Size(83, 32)
         Me.BtConfig.TabIndex = 1
         Me.BtConfig.Text = Global.PasteTools.My.MySettings.Default.BtConfigText
         Me.BtConfig.UseVisualStyleBackColor = False
@@ -262,9 +277,10 @@ Partial Class MainPT
         Me.BtData.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtData.FlatAppearance.BorderSize = 0
         Me.BtData.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtData.Location = New System.Drawing.Point(6, 20)
+        Me.BtData.Location = New System.Drawing.Point(8, 25)
+        Me.BtData.Margin = New System.Windows.Forms.Padding(4)
         Me.BtData.Name = "BtData"
-        Me.BtData.Size = New System.Drawing.Size(62, 26)
+        Me.BtData.Size = New System.Drawing.Size(83, 32)
         Me.BtData.TabIndex = 0
         Me.BtData.Text = Global.PasteTools.My.MySettings.Default.BtDataText
         Me.BtData.UseVisualStyleBackColor = False
@@ -273,9 +289,11 @@ Partial Class MainPT
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 6)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 8)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(142, 53)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(189, 66)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = Global.PasteTools.My.MySettings.Default.GroupBox1Text
@@ -286,18 +304,20 @@ Partial Class MainPT
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 20)
+        Me.ComboBox1.Location = New System.Drawing.Point(8, 25)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(130, 20)
+        Me.ComboBox1.Size = New System.Drawing.Size(172, 23)
         Me.ComboBox1.TabIndex = 0
         Me.ComboBox1.Text = Global.PasteTools.My.MySettings.Default.ComboBox1Text
         '
         'LableBtName
         '
         Me.LableBtName.AutoSize = True
-        Me.LableBtName.Location = New System.Drawing.Point(182, 60)
+        Me.LableBtName.Location = New System.Drawing.Point(243, 29)
+        Me.LableBtName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LableBtName.Name = "LableBtName"
-        Me.LableBtName.Size = New System.Drawing.Size(41, 12)
+        Me.LableBtName.Size = New System.Drawing.Size(55, 15)
         Me.LableBtName.TabIndex = 4
         Me.LableBtName.Text = "BtName"
         Me.LableBtName.Visible = False
@@ -305,9 +325,10 @@ Partial Class MainPT
         'LabelHovertip
         '
         Me.LabelHovertip.AutoSize = True
-        Me.LabelHovertip.Location = New System.Drawing.Point(315, 60)
+        Me.LabelHovertip.Location = New System.Drawing.Point(459, 29)
+        Me.LabelHovertip.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelHovertip.Name = "LabelHovertip"
-        Me.LabelHovertip.Size = New System.Drawing.Size(59, 12)
+        Me.LabelHovertip.Size = New System.Drawing.Size(79, 15)
         Me.LabelHovertip.TabIndex = 5
         Me.LabelHovertip.Text = "Hover tip"
         Me.LabelHovertip.Visible = False
@@ -315,9 +336,10 @@ Partial Class MainPT
         'LabelTxdata
         '
         Me.LabelTxdata.AutoSize = True
-        Me.LabelTxdata.Location = New System.Drawing.Point(182, 90)
+        Me.LabelTxdata.Location = New System.Drawing.Point(243, 58)
+        Me.LabelTxdata.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelTxdata.Name = "LabelTxdata"
-        Me.LabelTxdata.Size = New System.Drawing.Size(89, 12)
+        Me.LabelTxdata.Size = New System.Drawing.Size(119, 15)
         Me.LabelTxdata.TabIndex = 6
         Me.LabelTxdata.Text = "The text data:"
         Me.LabelTxdata.Visible = False
@@ -325,32 +347,35 @@ Partial Class MainPT
         'TextBoxBtName
         '
         Me.TextBoxBtName.BackColor = System.Drawing.Color.FloralWhite
-        Me.TextBoxBtName.Location = New System.Drawing.Point(237, 57)
+        Me.TextBoxBtName.Location = New System.Drawing.Point(338, 23)
+        Me.TextBoxBtName.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxBtName.Name = "TextBoxBtName"
-        Me.TextBoxBtName.Size = New System.Drawing.Size(72, 21)
+        Me.TextBoxBtName.Size = New System.Drawing.Size(95, 25)
         Me.TextBoxBtName.TabIndex = 7
         Me.TextBoxBtName.Visible = False
         '
         'TextBoxHovertip
         '
         Me.TextBoxHovertip.BackColor = System.Drawing.Color.FloralWhite
-        Me.TextBoxHovertip.Location = New System.Drawing.Point(373, 57)
+        Me.TextBoxHovertip.Location = New System.Drawing.Point(557, 23)
+        Me.TextBoxHovertip.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxHovertip.Name = "TextBoxHovertip"
-        Me.TextBoxHovertip.Size = New System.Drawing.Size(94, 21)
+        Me.TextBoxHovertip.Size = New System.Drawing.Size(188, 25)
         Me.TextBoxHovertip.TabIndex = 8
         Me.TextBoxHovertip.Visible = False
         '
-        'TextBoxTxData
+        'richBoxTxData
         '
-        Me.TextBoxTxData.BackColor = System.Drawing.Color.LavenderBlush
-        Me.TextBoxTxData.ForeColor = System.Drawing.Color.MediumSlateBlue
-        Me.TextBoxTxData.Location = New System.Drawing.Point(184, 109)
-        Me.TextBoxTxData.Multiline = True
-        Me.TextBoxTxData.Name = "TextBoxTxData"
-        Me.TextBoxTxData.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBoxTxData.Size = New System.Drawing.Size(282, 350)
-        Me.TextBoxTxData.TabIndex = 9
-        Me.TextBoxTxData.Visible = False
+        Me.richBoxTxData.BackColor = System.Drawing.Color.LavenderBlush
+        Me.richBoxTxData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.richBoxTxData.ForeColor = System.Drawing.Color.MediumSlateBlue
+        Me.richBoxTxData.Location = New System.Drawing.Point(246, 86)
+        Me.richBoxTxData.Margin = New System.Windows.Forms.Padding(4)
+        Me.richBoxTxData.Name = "richBoxTxData"
+        Me.richBoxTxData.Size = New System.Drawing.Size(792, 152)
+        Me.richBoxTxData.TabIndex = 9
+        Me.richBoxTxData.Text = ""
+        Me.richBoxTxData.Visible = False
         '
         'ButtonAdd
         '
@@ -360,9 +385,10 @@ Partial Class MainPT
         Me.ButtonAdd.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ButtonAdd.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonAdd.Location = New System.Drawing.Point(200, 468)
+        Me.ButtonAdd.Location = New System.Drawing.Point(799, 38)
+        Me.ButtonAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonAdd.Name = "ButtonAdd"
-        Me.ButtonAdd.Size = New System.Drawing.Size(56, 28)
+        Me.ButtonAdd.Size = New System.Drawing.Size(75, 35)
         Me.ButtonAdd.TabIndex = 10
         Me.ButtonAdd.Text = "Add"
         Me.ButtonAdd.UseVisualStyleBackColor = False
@@ -376,9 +402,10 @@ Partial Class MainPT
         Me.ButtonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ButtonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonDelete.Location = New System.Drawing.Point(388, 468)
+        Me.ButtonDelete.Location = New System.Drawing.Point(934, 38)
+        Me.ButtonDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonDelete.Name = "ButtonDelete"
-        Me.ButtonDelete.Size = New System.Drawing.Size(56, 28)
+        Me.ButtonDelete.Size = New System.Drawing.Size(75, 35)
         Me.ButtonDelete.TabIndex = 11
         Me.ButtonDelete.Text = "Delete"
         Me.ButtonDelete.UseVisualStyleBackColor = False
@@ -387,10 +414,11 @@ Partial Class MainPT
         'LabelStatu
         '
         Me.LabelStatu.AutoSize = True
-        Me.LabelStatu.ForeColor = System.Drawing.Color.LavenderBlush
-        Me.LabelStatu.Location = New System.Drawing.Point(182, 502)
+        Me.LabelStatu.ForeColor = System.Drawing.Color.DarkSeaGreen
+        Me.LabelStatu.Location = New System.Drawing.Point(243, 633)
+        Me.LabelStatu.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelStatu.Name = "LabelStatu"
-        Me.LabelStatu.Size = New System.Drawing.Size(65, 12)
+        Me.LabelStatu.Size = New System.Drawing.Size(87, 15)
         Me.LabelStatu.TabIndex = 12
         Me.LabelStatu.Text = "Status Bar"
         Me.LabelStatu.Visible = False
@@ -405,11 +433,12 @@ Partial Class MainPT
         Me.Btc.Font = New System.Drawing.Font("宋体", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Btc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Btc.Image = Global.PasteTools.My.Resources.Resource.close_normal
-        Me.Btc.Location = New System.Drawing.Point(153, 5)
+        Me.Btc.Location = New System.Drawing.Point(204, 6)
+        Me.Btc.Margin = New System.Windows.Forms.Padding(4)
         Me.Btc.Name = "Btc"
-        Me.Btc.Size = New System.Drawing.Size(15, 16)
+        Me.Btc.Size = New System.Drawing.Size(20, 20)
         Me.Btc.TabIndex = 3
-        Me.Btc.UseVisualStyleBackColor = False
+        Me.Btc.UseVisualStyleBackColor = True
         '
         'Btm
         '
@@ -421,22 +450,33 @@ Partial Class MainPT
         Me.Btm.Font = New System.Drawing.Font("宋体", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Btm.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Btm.Image = Global.PasteTools.My.Resources.Resource.minsize_normal
-        Me.Btm.Location = New System.Drawing.Point(134, 5)
+        Me.Btm.Location = New System.Drawing.Point(179, 6)
+        Me.Btm.Margin = New System.Windows.Forms.Padding(4)
         Me.Btm.Name = "Btm"
-        Me.Btm.Size = New System.Drawing.Size(15, 16)
+        Me.Btm.Size = New System.Drawing.Size(20, 20)
         Me.Btm.TabIndex = 2
-        Me.Btm.UseVisualStyleBackColor = False
+        Me.Btm.UseVisualStyleBackColor = True
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Location = New System.Drawing.Point(245, 245)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(793, 379)
+        Me.WebBrowser1.TabIndex = 25
+        Me.WebBrowser1.WebBrowserShortcutsEnabled = False
         '
         'MainPT
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = Global.PasteTools.My.MySettings.Default.MainPTBackColor
-        Me.ClientSize = New System.Drawing.Size(175, 520)
+        Me.ClientSize = New System.Drawing.Size(233, 660)
+        Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.LabelStatu)
         Me.Controls.Add(Me.ButtonDelete)
         Me.Controls.Add(Me.ButtonAdd)
-        Me.Controls.Add(Me.TextBoxTxData)
+        Me.Controls.Add(Me.richBoxTxData)
         Me.Controls.Add(Me.TextBoxHovertip)
         Me.Controls.Add(Me.TextBoxBtName)
         Me.Controls.Add(Me.LabelTxdata)
@@ -446,10 +486,13 @@ Partial Class MainPT
         Me.Controls.Add(Me.Btm)
         Me.Controls.Add(Me.TabControl1)
         Me.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.PasteTools.My.MySettings.Default, "MainPTBackColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MainPT"
         Me.Opacity = 0.95R
+        Me.Padding = New System.Windows.Forms.Padding(27, 75, 27, 25)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "MainPT"
         Me.TopMost = True
@@ -464,10 +507,6 @@ Partial Class MainPT
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents LinkLabelAbout As System.Windows.Forms.LinkLabel
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
@@ -488,11 +527,15 @@ Partial Class MainPT
     Friend WithEvents LabelTxdata As System.Windows.Forms.Label
     Friend WithEvents TextBoxBtName As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxHovertip As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxTxData As System.Windows.Forms.TextBox
+    Friend WithEvents richBoxTxData As System.Windows.Forms.RichTextBox
     Friend WithEvents ButtonAdd As System.Windows.Forms.Button
     Friend WithEvents ButtonDelete As System.Windows.Forms.Button
     Friend WithEvents LabelStatu As System.Windows.Forms.Label
     Friend WithEvents LabelMainPTColor As System.Windows.Forms.Label
     Friend WithEvents LabelTb3Color As System.Windows.Forms.Label
-
+    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
 End Class

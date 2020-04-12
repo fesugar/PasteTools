@@ -48,10 +48,10 @@
       <Value Profile="(Default)">粘贴工具</Value>
     </Setting>
     <Setting Name="MainPTBackColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">CadetBlue</Value>
+      <Value Profile="(Default)">Gray</Value>
     </Setting>
     <Setting Name="TabPage3BackColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">ActiveCaption</Value>
+      <Value Profile="(Default)">DarkGray</Value>
     </Setting>
     <Setting Name="LabelTb3ColorText" Type="System.String" Scope="Application">
       <Value Profile="(Default)">设置面板-颜色设置</Value>

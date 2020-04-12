@@ -11,11 +11,11 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("Paste tools")> 
 <Assembly: AssemblyDescription("BBS posts paste tools.")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Paste tools .NET")> 
-<Assembly: AssemblyCopyright("Copyright © T-Sugar 2014")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyProduct("Paste tools .NET")>
+<Assembly: AssemblyCopyright("Copyright © fesugar 2014-2020")>
+<Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 '如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
 <Assembly: Guid("e55503f7-c1bd-4f5c-897a-fd9991c2c383")> 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 方法是按如下所示使用“*”: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.15.2.0")> 
-<Assembly: AssemblyFileVersion("3.14.9.19")> 
+<Assembly: AssemblyVersion("2.15.2.0")>
+<Assembly: AssemblyFileVersion("3.20.11.0")>

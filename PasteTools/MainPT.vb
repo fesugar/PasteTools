@@ -149,62 +149,58 @@ Public Class MainPT
         TextBoxHovertip.Text = Pt.GetINI("Buttons", "ButtonTip" + Bvalue, "", ITEMpath)
         '为了预防错误，如果文件存在则进行读取
         If My.Computer.FileSystem.FileExists(filePath + "\data\" & Pt.GetINI("Buttons", "Data" + Bvalue, "", ITEMpath)) = True Then
-            TextBoxTxData.Text = My.Computer.FileSystem.ReadAllText(filePath + "\data\" & Pt.GetINI("Buttons", "Data" + Bvalue, "", ITEMpath), _
+            richBoxTxData.Text = My.Computer.FileSystem.ReadAllText(filePath + "\data\" & Pt.GetINI("Buttons", "Data" + Bvalue, "", ITEMpath),
                                 System.Text.Encoding.Default)
         Else
-            TextBoxTxData.Text = Nothing
+            richBoxTxData.Text = Nothing
         End If
 
         '判断状态
         If My.Settings.CheckBox2Checked = True Then
-            If ClientSize = New System.Drawing.Size(TextBoxHovertip.Location.X + TextBoxHovertip.Size.Width + TextBoxHovertip.Size.Height + 1, My.Settings.FormHeight) Then
-                CheckBox2.Enabled = False
-                For intCounter = TextBoxHovertip.Location.X + TextBoxHovertip.Size.Width + TextBoxHovertip.Size.Height To My.Settings.FormWidth Step -1
-                    'Me.Refresh()
-                    'Threading.Thread.Sleep(10)
-                    ClientSize = New System.Drawing.Size(Me.Width - 1, My.Settings.FormHeight)
-                Next
-                CheckBox2.Enabled = True
-                '隐藏控件
-                LableBtName.Hide()
-                LabelHovertip.Hide()
-                LabelTxdata.Hide()
-                LabelStatu.Hide()
-                TextBoxBtName.Hide()
-                TextBoxHovertip.Hide()
-                TextBoxTxData.Hide()
-                ButtonAdd.Hide()
-                ButtonDelete.Hide()
-            End If
+
+            CheckBox2.Enabled = False
+            ClientSize = New System.Drawing.Size(My.Settings.FormWidth, My.Settings.FormHeight)
+
+            CheckBox2.Enabled = True
+            '隐藏控件
+            LableBtName.Hide()
+            LabelHovertip.Hide()
+            LabelTxdata.Hide()
+            LabelStatu.Hide()
+            TextBoxBtName.Hide()
+            TextBoxHovertip.Hide()
+            richBoxTxData.Hide()
+            WebBrowser1.Hide()
+            ButtonAdd.Hide()
+            ButtonDelete.Hide()
+
 
             '主界面最小化.关闭按钮位置
             Btm.Location = New System.Drawing.Point(My.Settings.FormWidth - 45, 5)
             Btc.Location = New System.Drawing.Point(My.Settings.FormWidth - 25, 5)
         Else
             '判断状态
-            If ClientSize = New System.Drawing.Size(My.Settings.FormWidth, My.Settings.FormHeight) Then
-                CheckBox2.Enabled = False
-                For intCounter = My.Settings.FormWidth To TextBoxHovertip.Location.X + TextBoxHovertip.Size.Width + TextBoxHovertip.Size.Height Step 1
-                    'Me.Refresh()
-                    'Threading.Thread.Sleep(10)
-                    ClientSize = New System.Drawing.Size(Me.Width + 1, My.Settings.FormHeight)
-                Next
-                CheckBox2.Enabled = True
-                '显示控件
-                LableBtName.Show()
-                LabelHovertip.Show()
-                LabelTxdata.Show()
-                LabelStatu.Show()
-                TextBoxBtName.Show()
-                TextBoxHovertip.Show()
-                TextBoxTxData.Show()
-                ButtonAdd.Show()
-                ButtonDelete.Show()
-            End If
+
+            CheckBox2.Enabled = False
+
+            ClientSize = New System.Drawing.Size(WebBrowser1.Location.X + WebBrowser1.Width + ButtonDelete.Size.Height, My.Settings.FormHeight)
+            CheckBox2.Enabled = True
+            '显示控件
+            LableBtName.Show()
+            LabelHovertip.Show()
+            LabelTxdata.Show()
+            LabelStatu.Show()
+            TextBoxBtName.Show()
+            TextBoxHovertip.Show()
+            richBoxTxData.Show()
+            WebBrowser1.Show()
+            ButtonAdd.Show()
+            ButtonDelete.Show()
+
 
             '主界面最小化.关闭按钮位置
-            Btm.Location = New System.Drawing.Point(TextBoxHovertip.Location.X + TextBoxHovertip.Size.Width + TextBoxHovertip.Size.Height - 45, 5)
-            Btc.Location = New System.Drawing.Point(TextBoxHovertip.Location.X + TextBoxHovertip.Size.Width + TextBoxHovertip.Size.Height - 25, 5)
+            Btm.Location = New System.Drawing.Point(WebBrowser1.Location.X + WebBrowser1.Width + ButtonDelete.Size.Height - 45, 5)
+            Btc.Location = New System.Drawing.Point(WebBrowser1.Location.X + WebBrowser1.Width + ButtonDelete.Size.Height - 25, 5)
         End If
 
         Return 0
@@ -235,8 +231,8 @@ Public Class MainPT
     Private ButtonSelect As Object = Nothing '声明私有变量 鼠标点击的前一按钮项
 
     '粘贴按钮单击事件
-    Private Sub Click_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ComboBox1.TextChanged, _
-        BtData.Click, BtConfig.Click, MaskedTextBox1.TextChanged, CheckBox1.Click, CheckBox2.Click, CheckBox3.Click, _
+    Private Sub Click_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ComboBox1.TextChanged,
+        BtData.Click, BtConfig.Click, MaskedTextBox1.TextChanged, CheckBox1.Click, CheckBox2.Click, CheckBox3.Click,
         LinkLabelAbout.Click, Btm.Click, Btc.Click, ButtonAdd.Click, ButtonDelete.Click, LabelMainPTColor.Click, LabelTb3Color.Click
         Try
             '手动触发垃圾回收机制
@@ -334,7 +330,7 @@ Public Class MainPT
                     '                '增改，删除
                     'System.Diagnostics.Process.Start("http://bbs.guanjia.qq.com/?1552343")
                     MessageBox.Show(String.Format(
-                                    "Product: {0}" + vbCrLf + "Version: {1}" + vbCrLf + "Copyright © 2014 T-Sugar. All Rights Reserved.",
+                                    "Product: {0}" + vbCrLf + "Version: {1}" + vbCrLf + "Copyright © 2014-2020 fesugar.com. All Rights Reserved.",
                                     Application.ProductName,
                                     Application.ProductVersion),
                                     "About-PasteTools", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -351,8 +347,8 @@ Public Class MainPT
                     Pt.WriteINI("Buttons", "Button" + Bvalue, Trim(TextBoxBtName.Text), ITEMpath)
                     Pt.WriteINI("Buttons", "ButtonTip" + Bvalue, Trim(TextBoxHovertip.Text), ITEMpath)
                     Pt.WriteINI("Buttons", "data" + Bvalue, ComboBox1.Text + Bvalue + ".dt", ITEMpath)
-                    If Trim(TextBoxTxData.TextLength) <> 0 Then
-                        My.Computer.FileSystem.WriteAllText(filePath + "\data\" & Pt.GetINI("Buttons", "data" + Bvalue, "", ITEMpath), TextBoxTxData.Text, False, System.Text.Encoding.Default)
+                    If Trim(richBoxTxData.TextLength) <> 0 Then
+                        My.Computer.FileSystem.WriteAllText(filePath + "\data\" & Pt.GetINI("Buttons", "data" + Bvalue, "", ITEMpath), richBoxTxData.Text, False, System.Text.Encoding.Default)
                     Else
                         '判断是否存在数据，没有则不执行下面操作，退出，结束
                         If My.Computer.FileSystem.FileExists(filePath + "\data\" & Pt.GetINI("Buttons", "data" + Bvalue, "", ITEMpath)) = True Then
@@ -382,7 +378,7 @@ Public Class MainPT
                     '重新初始化数据
                     TextBoxBtName.Text = Nothing
                     TextBoxHovertip.Text = Nothing
-                    TextBoxTxData.Text = Nothing
+                    richBoxTxData.Text = Nothing
                     'Controls("Button" + Bvalue).Text = TextBox1.Text '使用 Controls 对象
                     Load_Data()
 
@@ -404,7 +400,7 @@ Public Class MainPT
                     If My.Computer.FileSystem.FileExists(filePath + "\data\" & Pt.GetINI("Buttons", "data" + Bvalue, "", ITEMpath)) = False Then
                         Exit Sub
                     Else
-                        fileReader = My.Computer.FileSystem.ReadAllText(filePath + "\data\" & Pt.GetINI("Buttons", "data" + Bvalue, "", ITEMpath), _
+                        fileReader = My.Computer.FileSystem.ReadAllText(filePath + "\data\" & Pt.GetINI("Buttons", "data" + Bvalue, "", ITEMpath),
                         System.Text.Encoding.Default)
                         '剪切板操作
                         My.Computer.Clipboard.Clear()
@@ -468,13 +464,12 @@ Public Class MainPT
 
         ' 此调用是设计器所必需的。
         InitializeComponent()
-
         ' 在 InitializeComponent() 调用之后添加任何初始化。
 
         '写入注册表程序版本号
-        If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools", _
+        If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools",
 "Version", Nothing) <> Application.ProductVersion Then
-            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools", _
+            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools",
      "Version", Windows.Forms.Application.ProductVersion)
         End If
 
@@ -505,7 +500,14 @@ Public Class MainPT
         My.Settings.FormHeight = Me.Height
 
         Ut()
-       
+
+        '
+        'Buttons
+        '
+        TabPg() '动态加载按钮
+
+        webload()
+
     End Sub
 
     '******************** 判断当前窗口是否激活 - 开始
@@ -529,7 +531,7 @@ Public Class MainPT
             e.Graphics.DrawString(My.Settings.TitleText, title_font, SystemBrushes.InactiveBorder, 8, 9)
         End If
     End Sub
-    <System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.Demand, Name:="FullTrust")> _
+    <System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.Demand, Name:="FullTrust")>
     Protected Overrides Sub WndProc(ByRef m As Message)
         ' Listen for operating system messages
         Select Case (m.Msg)
@@ -549,4 +551,42 @@ Public Class MainPT
     '********************
     '********************判断当前窗口是否激活 - 结束
 
+    Private Sub MainPT_ClientSizeChanged(sender As Object, e As EventArgs) Handles Me.ClientSizeChanged
+        Me.Refresh()
+        Me.OnSizeChanged(e)
+    End Sub
+
+
+    '*** web
+
+    Private content As String = ""
+
+
+    Public Function GetContent() As String
+        Return Me.content
+    End Function
+
+
+    Public Sub RequestContent(ByVal str As String)
+        Me.content = str
+        Me.richBoxTxData.Text = Me.content
+    End Sub
+
+    Private Sub richTextBox1_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles richBoxTxData.TextChanged
+        If Me.richBoxTxData.Focused Then
+            Me.content = Me.richBoxTxData.Text
+            Dim args As Object() = New Object() {Me.content}
+            Me.WebBrowser1.Document.InvokeScript("setContent", args)
+        End If
+    End Sub
+
+    Private Sub webBrowser1_Resize(ByVal sender As Object, ByVal e As EventArgs) Handles WebBrowser1.Resize
+        Me.WebBrowser1.Refresh()
+    End Sub
+
+    Private Sub webload()
+        Me.WebBrowser1.Url = New Uri((Application.StartupPath & "\kindeditor\index.html"), UriKind.Absolute)
+        Me.WebBrowser1.ObjectForScripting = Me
+    End Sub
+    '*** web end
 End Class
