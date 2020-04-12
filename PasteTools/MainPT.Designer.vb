@@ -438,7 +438,7 @@ Partial Class MainPT
         Me.Btc.Name = "Btc"
         Me.Btc.Size = New System.Drawing.Size(20, 20)
         Me.Btc.TabIndex = 3
-        Me.Btc.UseVisualStyleBackColor = True
+        Me.Btc.UseVisualStyleBackColor = False
         '
         'Btm
         '
@@ -455,7 +455,7 @@ Partial Class MainPT
         Me.Btm.Name = "Btm"
         Me.Btm.Size = New System.Drawing.Size(20, 20)
         Me.Btm.TabIndex = 2
-        Me.Btm.UseVisualStyleBackColor = True
+        Me.Btm.UseVisualStyleBackColor = False
         '
         'WebBrowser1
         '

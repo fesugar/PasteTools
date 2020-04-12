@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.html linguist-language=Visual Basic
+*.js linguist-language=Visual Basic
+*.css linguist-language=Visual Basic

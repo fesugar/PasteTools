@@ -1,0 +1,19 @@
+﻿；修改字段信息
+
+字段如下
+
+Button=Button
+ButtonTip=ButtonTip
+data=data
+
+实际数据对应相应的按钮，从1-60
+
+button=此处为按钮的名称
+buttontip=此处为按钮的悬浮提示
+data=此处为相应按钮的粘贴数据，为TXT对应文本文件名称
+存放在 data 文件夹下，，如下示例
+**************************
+
+Button1=按钮1
+ButtonTip1=第一个粘贴数据的按钮
+data1=dt1

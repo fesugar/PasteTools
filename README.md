@@ -31,3 +31,6 @@ http://www.microsoft.com/zh-cn/download/details.aspx?id=21
 
 7、模式选择
 模式选择用来增加数据，如果当前选择的配置文件60个数据都已经满了，可以进行增加。
+
+
+![粘贴工具](https://github.com/fesugar/PasteTools/raw/master/screen.JPG)

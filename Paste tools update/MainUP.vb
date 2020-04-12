@@ -302,7 +302,7 @@ Public Class MainUP
 
     '浏览下载页面
     Private Sub LinkLabel_url_Click(sender As Object, e As EventArgs) Handles LinkLabel_url.Click
-        System.Diagnostics.Process.Start("http://fesugar.duapp.com/app/Soft/PasteTools/")
+        System.Diagnostics.Process.Start("https://github.com/fesugar/PasteTools/raw/master/")
     End Sub
 
     '检测更新线程
@@ -310,7 +310,7 @@ Public Class MainUP
         document = New XmlDocument()
 
         ' Replace this file name with a valid file name.
-        document.Load("http://fesugar.duapp.com/app/Soft/PasteTools/PasteToolsUP.xml")
+        document.Load("https://github.com/fesugar/PasteTools/raw/master/PasteToolsUP.xml")
         ' Uncomment the following line to
         ' simulate a noticeable latency.
         'Thread.Sleep(5000);
