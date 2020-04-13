@@ -226,6 +226,7 @@ Public Class MainPT
             toolTip1.SetToolTip(TabPage1.Controls.Item(i), Pt.GetINI("Buttons", "ButtonTip" & i.ToString, "ButtonTip" & i.ToString, ITEMpath)) '修改默认文本。
             'End If
         Next
+
     End Sub
 
     Private ButtonSelect As Object = Nothing '声明私有变量 鼠标点击的前一按钮项
@@ -572,7 +573,7 @@ Public Class MainPT
         Me.richBoxTxData.Text = Me.content
     End Sub
 
-    Private Sub richTextBox1_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles richBoxTxData.TextChanged
+    Private Sub richTextBox1_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles richBoxTxData.TextChanged, richBoxTxData.Click
         If Me.richBoxTxData.Focused Then
             Me.content = Me.richBoxTxData.Text
             Dim args As Object() = New Object() {Me.content}

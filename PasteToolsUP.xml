@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<update ver="3.20.11.0">
+<Log text="
+更新说明：
+------------------
+3.20.11.0
+1.增加 HTML 编辑器"
+> </Log>
+<Url link="https://"> </Url>
+<Md5 hash="1234567890"> </Md5>
+
+</update>

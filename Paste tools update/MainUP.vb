@@ -21,14 +21,14 @@ Public Class MainUP
             Btn_downBool(False)
 
             '写入注册表路径
-            If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools", _
+            If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools",
     "Path", Nothing) <> My.Application.Info.DirectoryPath Then
-                My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools", _
+                My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools",
         "Path", My.Application.Info.DirectoryPath)
             End If
 
             '获取注册表版本号
-            Ver = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools", _
+            Ver = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\FeSugar\Reply to paste tools",
     "Version", Nothing)
 
             ' 判断联网
@@ -94,8 +94,8 @@ Public Class MainUP
     End Sub
 
     'backgroundWorker1_DoWork
-    Private Sub backgroundWorker1_DoWork( _
-         ByVal sender As Object, _
+    Private Sub backgroundWorker1_DoWork(
+         ByVal sender As Object,
          ByVal e As DoWorkEventArgs) _
          Handles backgroundWorker1.DoWork
         Try
@@ -109,8 +109,8 @@ Public Class MainUP
     End Sub
 
     'backgroundWorker1_RunWorkerCompleted
-    Private Sub backgroundWorker1_RunWorkerCompleted( _
-        ByVal sender As Object, _
+    Private Sub backgroundWorker1_RunWorkerCompleted(
+        ByVal sender As Object,
         ByVal e As RunWorkerCompletedEventArgs) _
         Handles backgroundWorker1.RunWorkerCompleted
         On Error Resume Next
@@ -302,57 +302,65 @@ Public Class MainUP
 
     '浏览下载页面
     Private Sub LinkLabel_url_Click(sender As Object, e As EventArgs) Handles LinkLabel_url.Click
-        System.Diagnostics.Process.Start("https://github.com/fesugar/PasteTools/raw/master/")
+        System.Diagnostics.Process.Start("https://fesugar.github.io/PasteTools/")
     End Sub
 
     '检测更新线程
     Private Sub ThreadProc_clintUp()
-        document = New XmlDocument()
+        Try
 
-        ' Replace this file name with a valid file name.
-        document.Load("https://github.com/fesugar/PasteTools/raw/master/PasteToolsUP.xml")
-        ' Uncomment the following line to
-        ' simulate a noticeable latency.
-        'Thread.Sleep(5000);
-        ' Dim output As System.Text.StringBuilder = New System.Text.StringBuilder()
+            document = New XmlDocument()
 
-        Dim xmlString As String = document.InnerXml
+            ' Replace this file name with a valid file name.
+            document.Load("https://github.com/fesugar/PasteTools/raw/master/PasteToolsUP.xml")
+            ' Uncomment the following line to
+            ' simulate a noticeable latency.
+            'Thread.Sleep(5000);
+            ' Dim output As System.Text.StringBuilder = New System.Text.StringBuilder()
 
-        ' Create an XmlReader
-        Using reader As XmlReader = XmlReader.Create(New StringReader(xmlString))
+            Dim xmlString As String = document.InnerXml
 
-            reader.ReadToFollowing("update")
-            reader.MoveToFirstAttribute()
-            ServVer = reader.Value
-            'output.AppendLine("The genre value: " + ServVer)
-            reader.ReadToFollowing("Log")
-            reader.MoveToFirstAttribute()
-            'TextBox_Msg.Text = reader.Value.ToString
-            SetText(reader.Value.ToString)
-            'output.AppendLine("Content of the title element: " + reader.Value.ToString())
-            reader.ReadToFollowing("Url")
-            reader.MoveToFirstAttribute()
-            ServUrl = reader.Value.ToString
-            'output.AppendLine("Content of the title element: " + reader.Value.ToString())
-            reader.ReadToFollowing("Md5")
-            reader.MoveToFirstAttribute()
-            ServMd5 = reader.Value.ToString
-            'output.AppendLine("Content of the title element: " + reader.Value.ToString())
-        End Using
-        If Ver = ServVer Then
-            'Me.Label_tip.Text = "当前已是最新版本，无需升级。"
-            TipText("当前已是最新版本，无需升级。")
-            'Me.TextBox_Msg.Text = "当前版本:" + Ver + vbCrLf + "您已经安装了最新版本，感谢您对粘贴工具的支持。"
-            SetText("当前版本:" + Ver + vbCrLf + "您已经安装了最新版本，感谢您对粘贴工具的支持。")
-            'Me.ProgressBar1.Visible = False
-            ProgressBar1Bool(False)
-            'Me.Btn_down.Enabled = False
-            Btn_downBool(False)
-            Exit Sub
-        End If
-        '新版本
-        TipText("发现新版本")
-        '启用升级按钮
-        Btn_downBool(True)
+            ' Create an XmlReader
+            Using reader As XmlReader = XmlReader.Create(New StringReader(xmlString))
+
+                reader.ReadToFollowing("update")
+                reader.MoveToFirstAttribute()
+                ServVer = reader.Value
+                'output.AppendLine("The genre value: " + ServVer)
+                reader.ReadToFollowing("Log")
+                reader.MoveToFirstAttribute()
+                'TextBox_Msg.Text = reader.Value.ToString
+                SetText(reader.Value.ToString)
+                'output.AppendLine("Content of the title element: " + reader.Value.ToString())
+                reader.ReadToFollowing("Url")
+                reader.MoveToFirstAttribute()
+                ServUrl = reader.Value.ToString
+                'output.AppendLine("Content of the title element: " + reader.Value.ToString())
+                reader.ReadToFollowing("Md5")
+                reader.MoveToFirstAttribute()
+                ServMd5 = reader.Value.ToString
+                'output.AppendLine("Content of the title element: " + reader.Value.ToString())
+            End Using
+            If Ver = ServVer Then
+                'Me.Label_tip.Text = "当前已是最新版本，无需升级。"
+                TipText("当前已是最新版本，无需升级。")
+                'Me.TextBox_Msg.Text = "当前版本:" + Ver + vbCrLf + "您已经安装了最新版本，感谢您对粘贴工具的支持。"
+                SetText("当前版本:" + Ver + vbCrLf + "您已经安装了最新版本，感谢您对粘贴工具的支持。")
+                'Me.ProgressBar1.Visible = False
+                ProgressBar1Bool(False)
+                'Me.Btn_down.Enabled = False
+                Btn_downBool(False)
+                Exit Sub
+            End If
+            '新版本
+            TipText("发现新版本")
+            '启用升级按钮
+            Btn_downBool(True)
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Application.Exit()
+        End Try
     End Sub
 End Class

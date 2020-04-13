@@ -464,7 +464,6 @@ Partial Class MainPT
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(793, 379)
         Me.WebBrowser1.TabIndex = 25
-        Me.WebBrowser1.WebBrowserShortcutsEnabled = False
         '
         'MainPT
         '
