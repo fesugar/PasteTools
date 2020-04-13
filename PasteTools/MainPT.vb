@@ -233,7 +233,7 @@ Public Class MainPT
 
     '粘贴按钮单击事件
     Private Sub Click_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ComboBox1.TextChanged,
-        BtData.Click, BtConfig.Click, MaskedTextBox1.TextChanged, CheckBox1.Click, CheckBox2.Click, CheckBox3.Click,
+        BtData.Click, BtConfig.Click, MaskedTextBox1.TextChanged, CheckBox1.Click, CheckBox2.Click, CheckBox3.Click, Label2.Click,
         LinkLabelAbout.Click, Btm.Click, Btc.Click, ButtonAdd.Click, ButtonDelete.Click, LabelMainPTColor.Click, LabelTb3Color.Click
         Try
             '手动触发垃圾回收机制
@@ -319,12 +319,12 @@ Public Class MainPT
                         Me.TabPage3.BackColor = MyDialog.Color
                     End If
                 Case "LinkLabelAbout" '检测软件更新事件
-                    '                On Error GoTo error1 '如运行中出现错误跳转到相应错误标记处执行
-                    '                If My.Computer.FileSystem.FileExists(".\update.exe") = True Then '判断此文件存在时
-                    '                    System.Diagnostics.Process.Start(".\update.exe") '启动此程序
+                    '               On Error GoTo error1 '如运行中出现错误跳转到相应错误标记处执行
+                    ' If My.Computer.FileSystem.FileExists(".\PasteToolsUp.exe") = True Then '判断此文件存在时
+                    '                    System.Diagnostics.Process.Start(".\PasteToolsUp.exe") '启动此程序
                     '                Else
                     '                    MsgBox("I'm sorry, upgrade file is missing, please make sure that is not blocked by anti-virus software, or please try to reinstall.", MsgBoxStyle.Exclamation, "ERROR!")
-                    '                End If
+                    ' End If
                     '                Exit Sub
                     'error1:         '错误标记
                     '                MsgBox(ErrorToString)
@@ -335,6 +335,13 @@ Public Class MainPT
                                     Application.ProductName,
                                     Application.ProductVersion),
                                     "About-PasteTools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Case "Label2" '检测软件更新事件
+                    '               On Error GoTo error1 '如运行中出现错误跳转到相应错误标记处执行
+                    If My.Computer.FileSystem.FileExists(".\PasteToolsUp.exe") = True Then '判断此文件存在时
+                        System.Diagnostics.Process.Start(".\PasteToolsUp.exe") '启动此程序
+
+                    End If
+
                 Case "ButtonAdd"
                     '判断是否存在默认数据，如果没有数据则退出过程不操作
                     If Bvalue = Nothing Then

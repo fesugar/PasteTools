@@ -6,31 +6,47 @@
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppID={{1FEBD031-50CD-47D2-9D41-6B4E41E5DDAE}
+;程序名
 AppName=PasteTools Setup
+;版本号
 AppVersion=3.20
-AppPublisher=fesugar.
+;发布者名
+AppPublisher=fesugar.com
+;发布者相关连接
 AppPublisherURL=http://www.fesugar.com/
 AppSupportURL=https://github.com/fesugar/PasteTools
 AppUpdatesURL=https://github.com/fesugar/PasteTools
+;默认安装目录
 DefaultDirName={userappdata}\PasteTools
+;是否禁止安装目录选择
 DisableDirPage=yes
+;默认开始菜单名
 DefaultGroupName=PasteTools
+;是否打开->可选安装开始菜单项
 AllowNoIcons=true
+;安装前查看的文本文件
+;InfoBeforeFile=C:\Example\原始文件\Setup_New.txt
+;安装后查看文本文件
+;InfoAfterFile=C:\Users\abct\Desktop\PasteTools_v3.20_7z\PasteTools\readme.htm
+;输出文件夹
 OutputBaseFilename=setup
+;压缩设置
 Compression=lzma/Ultra64
 SolidCompression=true
-AppCopyright=Copyright © fesugar 2014-2020 
-MinVersion=,6.1.7600
+;版本信息
+AppCopyright=Copyright ? fesugar 2014-2020
 UninstallLogMode=overwrite
 UninstallDisplayIcon={app}\PasteTools.exe
+LicenseFile=C:\Users\abct\Desktop\PasteTools_v3.20_7z\PasteTools\license.txt
+
 
 [Languages]
 Name: "chinese"; MessagesFile: "compiler:Languages\Chinese.isl"
-;Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "en"; MessagesFile: "compiler:Default.isl"
 
 
 [Tasks]
-Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 ;用户定制任务  
 ;Name: "Tasks_1" ; Description:"用户自定义任务1"; Flags: unchecked  
@@ -44,6 +60,7 @@ Source: C:\Users\abct\Desktop\PasteTools_v3.20_7z\PasteTools\*; DestDir: {app}; 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 ; .net 4.0
 Source: C:\Users\abct\Desktop\PasteTools_v3.20_7z\PasteTools\net462\NDP462.exe; DestDir: {tmp}; Check: NeedInstallDotNet; 
+Source: "C:\Users\abct\Desktop\PasteTools_v3.20_7z\PasteTools\readme.htm"; DestDir: "{app}";Flags:isreadme
 
 [Icons]
 Name: "{group}\PasteTools"; Filename: "{app}\PasteTools.exe"
@@ -102,6 +119,7 @@ URLLabel.Font.Style := [fsBold, fsUnderline];
 URLLabel.Font.Color := clBlue;
 URLLabel.Cursor := crHand;
 URLLabel.OnClick := @URLLabelOnClick;
+WizardForm.LICENSEACCEPTEDRADIO.Checked:=true; //默认同意许可
 //URLLabel.Font.Name := '宋体';
 //URLLabel.Font.Height := ScaleY(-13);
 URLLabel.Parent := WizardForm;
@@ -247,7 +265,7 @@ end;
         // result := true//
 // end//
 
-
 [Registry]
 Root: HKCU; SubKey: "Software\FeSugar\Reply to paste tools"; ValueType: string; ValueName: Version; Flags: CreateValueIfDoesntExist UninsDeleteKey;
 Root: HKCU; SubKey: "Software\FeSugar\Reply to paste tools"; ValueType: string; ValueName: Path; Flags: CreateValueIfDoesntExist UninsDeleteKey; ValueData: {app}; 
+

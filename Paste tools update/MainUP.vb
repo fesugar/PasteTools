@@ -312,7 +312,7 @@ Public Class MainUP
             document = New XmlDocument()
 
             ' Replace this file name with a valid file name.
-            document.Load("https://github.com/fesugar/PasteTools/raw/master/PasteToolsUP.xml")
+            document.Load("https://raw.githubusercontent.com/fesugar/PasteTools/master/PasteToolsUP.xml")
             ' Uncomment the following line to
             ' simulate a noticeable latency.
             'Thread.Sleep(5000);

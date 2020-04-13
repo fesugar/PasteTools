@@ -224,7 +224,7 @@ Partial Class MainPT
         '
         Me.LinkLabelAbout.AutoSize = True
         Me.LinkLabelAbout.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabelAbout.Location = New System.Drawing.Point(143, 549)
+        Me.LinkLabelAbout.Location = New System.Drawing.Point(155, 547)
         Me.LinkLabelAbout.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabelAbout.Name = "LinkLabelAbout"
         Me.LinkLabelAbout.Size = New System.Drawing.Size(61, 15)
@@ -236,10 +236,13 @@ Partial Class MainPT
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(13, 549)
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Label2.Location = New System.Drawing.Point(8, 545)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 15)
+        Me.Label2.Size = New System.Drawing.Size(57, 17)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Label2"
         '
